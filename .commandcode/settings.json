@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(node \"%COMMANDCODE_SCRATCHPAD%\\probe.js\")",
+      "Shell(npx playwright test tests/mytest.spec.ts --project=chromium --reporter=line)",
+      "Shell(git:*)",
+      "Shell(cmdkey:*)",
+      "Shell(findstr:*)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}
