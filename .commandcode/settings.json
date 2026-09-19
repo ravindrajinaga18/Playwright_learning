@@ -5,7 +5,9 @@
       "Shell(npx playwright test tests/mytest.spec.ts --project=chromium --reporter=line)",
       "Shell(git:*)",
       "Shell(cmdkey:*)",
-      "Shell(findstr:*)"
+      "Shell(findstr:*)",
+      "Shell(git commit -F - <<'EOF' Add Playwright TypeScript learning tests (Day1-Day12) Covers locator strategies, CSS/XPath locators, filters, data entry forms, dropdowns, tables, pagination, and date pickers, plus Playwright config and project scaffolding. Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "powershell"
     ],
     "deny": [],
     "defaultMode": "default"

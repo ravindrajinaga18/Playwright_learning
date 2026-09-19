@@ -53,7 +53,7 @@ test('Demo jQuery datepicker', async ({ page }) => {
   await dateInput.click()
 
   //Target date (past/future)
-  const targetYear = '2026';
+  const targetYear = '2027';
   const targetMonth = 'July';
   const targetDay = '15';
 
@@ -64,7 +64,7 @@ test('Demo jQuery datepicker', async ({ page }) => {
   //await selectDate(page, targetYear, targetMonth, targetDay) // for selecting current date, no need to pass flag true/false
 
   //verify selected date
-  await expect(dateInput).toHaveValue("07/15/2026") //mm/dd/yyyy
+  await expect(dateInput).toHaveValue("07/15/2027") //mm/dd/yyyy
 
   await page.waitForTimeout(5000)
 

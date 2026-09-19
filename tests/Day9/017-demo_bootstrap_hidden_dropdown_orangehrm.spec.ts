@@ -22,12 +22,14 @@ test('Bootstrap dropdown', async({page})=>{
     await page.getByRole('link',{name:'PIM'}).click()
 
    // 6. Click on Job Title dropdown (hidden/bootstrap dropdown)
-   const jobTitleDropDown=page.locator('form i').nth(2)
+    //const jobTitleDropDown=page.locator('form i').nth(2)
+    const jobTitleDropDown=page.locator('.oxd-select-text--after').nth(2);
     await jobTitleDropDown.click()
 
 //7. check dropdown options are visible
 const options=page.locator("div[role='listbox'] span") //capturing the options
 await expect(options.first()).toBeVisible()
+
 
 
 // 8. Count number of options

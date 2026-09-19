@@ -1,42 +1,27 @@
+import {test, expect} from "@playwright/test"
 
-import {test, expect, Page} from "@playwright/test"
+test('Working with multiple tabs',async({browser})=>{
 
-
-async function selectYear(page:Page,tar_data:string,tar_month:string,tar_year:string){
-
- const month= await page.locator('.ui-datepicker-month').innerText();
- const year= await page.locator('.ui-datepicker-year').innerText();
-    while(true){
-      if(month===tar_month && year===tar_year){
-            break
-      }
-
-      if()
-    }
-}
+     const context=await browser.newContext();
+         const page=await context.newPage()
+     
+     
+     await page.goto('https://sdetqa.vercel.app/autoplay');
 
 
+     const [ele]= await Promise.all(
+        [
+          context.waitForEvent('page'),
+           page.getByRole('button',{name:'New Tab'}).click()
+        ]
+     )
+     
 
+     await ele.locator('.getStarted_Sjon').click();
 
+     await context.close();
+     await page.close();
+    
 
-
-
-
-
-   
-
-
-
-
-
-
-test('Verifying the datepickers',async({page})=>{
-     const date_filed=page.locator('#datepicker1');
-     await date_filed.click();
-
-     const tar_data='2';
-     const tar_month='June'
-     const tar_year='2027';
-
-     selectYear(page,tar_data,tar_month,tar_year);
+    
 })
